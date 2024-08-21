@@ -1,7 +1,11 @@
 import React from "react";
+import usePokemons from "../hooks/usePokemons.ts";
 
 const Home = () => {
-return <div>Home</div>
+const { pokemons } = usePokemons();
+
+    return <div>Home</div>
+
 };
 
 export default Home;
