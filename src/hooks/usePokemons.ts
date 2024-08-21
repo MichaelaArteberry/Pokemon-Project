@@ -15,6 +15,9 @@ const usePokemons = () => {
         if(nextUrl) {
             const result = await httpClient.get<PokemonListResponse>(nextUrl)
             console.log(result)
+            if (result?.data?.results) {
+                setPokemons(result.data.results)
+            }
         }
     }
 

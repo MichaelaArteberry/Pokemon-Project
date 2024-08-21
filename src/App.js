@@ -5,7 +5,7 @@ import Home from './pages/Home.tsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    elements: <Home />
+      elements: <Home />
   },
 ]);
 
