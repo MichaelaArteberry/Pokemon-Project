@@ -1,5 +1,5 @@
 # Pokemon API project
-Just getting some quick reps in with API calls and some REact practice.
+Just getting some quick reps in with API calls and some React practice.
 
 I have plans to incorporate some CSS and make it a cool little fun thing to do to hone in on some skills.
 
