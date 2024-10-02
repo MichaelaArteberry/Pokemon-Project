@@ -1,5 +1,7 @@
 import React from "react";
 import { IndexedPokemon } from "../interface/pokemon.interface";
+import {Card, CardContent, Typography} from "@mui/material";
+import {Box} from "@mui/system";
 
 interface PokemonCardProps {
     pokemon: IndexedPokemon
@@ -7,7 +9,13 @@ interface PokemonCardProps {
 
 const PokemonCard = ({pokemon}: PokemonCardProps) => {
     return (
-            <div>{ pokemon.name }</div>
+            <Card>
+                <CardContent>
+                    <Box>
+                        <Typography>{pokemon.name}</Typography>
+                    </Box>
+                </CardContent>
+            </Card>
     )
 };
 
