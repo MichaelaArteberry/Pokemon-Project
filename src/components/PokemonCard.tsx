@@ -11,7 +11,7 @@ const PokemonCard = ({pokemon}: PokemonCardProps) => {
     return (
             <Card>
                 <CardContent>
-                    <Box>
+                    <Box sx={{display:"flex", justifyContent: "center"}}>
                         <Typography>{pokemon.name}</Typography>
                     </Box>
                 </CardContent>
