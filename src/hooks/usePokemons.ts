@@ -31,12 +31,15 @@ const indexedPokemonToListPokemon = (indexedPokemon: IndexedPokemon) => {
             if (result?.data?.results) {
                 const listPokemon = result.data.results.map(p => indexedPokemonToListPokemon(p))
                 setPokemons(listPokemon)
+                setNextUrl(result.data.next)
             }
         }
     }
 
     return {
         pokemons,
+        fetchNextPage: fetchPokemon,
+hasMorePokemon: !!nextUrl
     };
 
 }
