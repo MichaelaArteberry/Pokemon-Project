@@ -5,7 +5,7 @@ import { httpClient } from '../api/httpClient.ts'
 import { POKEMON_IMAGES_BASE_URL } from '../constants.ts'
 
 const usePokemons = () => {
-    const [pokemons, setPokemons] = useState<IndexedPokemon[]>([])
+    const [pokemons, setPokemons] = useState<ListPokemon[]>([])
     const [nextUrl, setNextUrl] = useState<string | null>(POKEMON_API_POKEMON_URL)
 
     useEffect(() => {
@@ -21,6 +21,7 @@ const indexedPokemonToListPokemon = (indexedPokemon: IndexedPokemon) => {
         image: `${POKEMON_IMAGES_BASE_URL}/${pokedexNumber}.png`,
         pokedexNumber: pokedexNumber
     }
+    return listPokemon;
 }
 
     const fetchPokemon = async () => {
@@ -28,7 +29,8 @@ const indexedPokemonToListPokemon = (indexedPokemon: IndexedPokemon) => {
             const result = await httpClient.get<PokemonListResponse>(nextUrl)
             console.log(result)
             if (result?.data?.results) {
-                setPokemons(result.data.results)
+                const listPokemon = result.data.results.map(p => indexedPokemonToListPokemon(p))
+                setPokemons(listPokemon)
             }
         }
     }
@@ -36,6 +38,7 @@ const indexedPokemonToListPokemon = (indexedPokemon: IndexedPokemon) => {
     return {
         pokemons,
     };
+
 }
 
 export default usePokemons;

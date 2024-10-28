@@ -1,22 +1,24 @@
 import React from "react";
-import { IndexedPokemon } from "../interface/pokemon.interface";
-import {Card, CardContent, Typography} from "@mui/material";
+import { IndexedPokemon, ListPokemon } from "../interface/pokemon.interface";
+import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 import {Box} from "@mui/system";
 
 interface PokemonCardProps {
-    pokemon: IndexedPokemon
+    pokemon: ListPokemon
 }
 
 const PokemonCard = ({pokemon}: PokemonCardProps) => {
     return (
             <Card>
+                <CardMedia component="img" image={pokemon.image} title={pokemon.name}
+                sx = {{height: 100, objectFit: 'container'}}/>
                 <CardContent>
-                    <Box sx={{display:"flex", justifyContent: "center"}}>
+                    <Box sx = {{ display: "flex", justifyContent: "center"}}>
                         <Typography>{pokemon.name}</Typography>
                     </Box>
                 </CardContent>
             </Card>
-    )
+    );
 };
 
 export default PokemonCard;

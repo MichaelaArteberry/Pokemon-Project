@@ -1,10 +1,10 @@
 import React from "react";
-import { IndexedPokemon } from "../interface/pokemon.interface";
+import { IndexedPokemon, ListPokemon } from "../interface/pokemon.interface";
 import PokemonCard from "./PokemonCard.tsx";
 import { Grid } from "@mui/material";
 
 interface PokemonListProps {
-pokemons: IndexedPokemon[];
+    pokemons: ListPokemon[];
 }
 
 const PokemonList = ({ pokemons }: PokemonListProps) => {
